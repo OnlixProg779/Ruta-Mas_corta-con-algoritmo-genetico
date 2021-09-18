@@ -77,10 +77,10 @@ def _cruza_dos_padres(padre1, padres, nuevos_hijos):#Aqui se especifica el trata
                 # print(hijoNuevoAux)
                 rutaAux = Ruta(hijoNuevoAux)
                 if(noExisteLista(rutaAux.intersecciones, nuevos_hijos)):
-                    print("Candidato calificado (Cruzado exitoso y calificado)")
-                    print(rutaAux.intersecciones)
+                    # print("Candidato calificado (Cruzado exitoso y calificado)")
+                    # print(rutaAux.intersecciones)
                     nuevos_hijos.append(rutaAux)
-                    print('Distancia nuveo cruce: ' + str(Ruta(hijoNuevoAux).distancia))
+                    # print('Distancia nuveo cruce: ' + str(Ruta(hijoNuevoAux).distancia))
                 break
  
 def noExisteLista(inter, lista):
