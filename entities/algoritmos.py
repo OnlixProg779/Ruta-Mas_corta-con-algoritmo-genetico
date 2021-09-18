@@ -60,33 +60,34 @@ def _cruza_dos_padres(padre1, padres, nuevos_hijos):#Aqui se especifica el trata
     hijo = deepcopy(padre1.intersecciones[:aleatorio]); #genera una copia de las 3 primeras intersecciones
     aux = []
     
-    # print("hijo")
-    # print(hijo)
+    #print("hijo")
+    #print(hijo)
 
 
     ciudadTresHijo = hijo[aleatorio-1].name #El nombre del ultimo hijo
+    #print(ciudadTresHijo)
     for i in range(len(padres)):
         for j in range(len(padres[i].intersecciones)):
             hijoNuevoAux = []
             if(padres[i].intersecciones[j].name == ciudadTresHijo):
+                #print("dddddddddddddddddddddddddddddddddddddddddddddddd")
                 aux = deepcopy(padres[i].intersecciones[j+1:])
+                # print(aux)
                 hijoNuevoAux = hijo + aux
+                # print(hijoNuevoAux)
                 rutaAux = Ruta(hijoNuevoAux)
                 if(noExisteLista(rutaAux.intersecciones, nuevos_hijos)):
-                    # print("Candidato calificado")
-                    # print(rutaAux.intersecciones)
+                    print("Candidato calificado (Cruzado exitoso y calificado)")
+                    print(rutaAux.intersecciones)
                     nuevos_hijos.append(rutaAux)
-                    # print(Ruta(hijoNuevoAux).distancia)
-                    break
-     
-     
-         
-  
+                    print('Distancia nuveo cruce: ' + str(Ruta(hijoNuevoAux).distancia))
+                break
  
 def noExisteLista(inter, lista):
+    #print(inter)
     for i in range(len(lista)):
-        for j in range(len(lista[i].intersecciones)):
             if(inter == lista[i].intersecciones):
+                #print(lista[i].intersecciones)
                 return False
     return True
     
@@ -909,7 +910,7 @@ def iniciarMatriz():
     datos[12][11]=0
     datos[12][12]=0
     datos[12][13]=12
-    datos[12][14]=7
+    datos[12][14]=0
     datos[12][15]=0
     datos[12][16]=0
     datos[12][17]=10
